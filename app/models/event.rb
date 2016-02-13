@@ -1,23 +1,20 @@
-class Team < ActiveRecord::Base
+class Event < ActiveRecord::Base
+  belongs_to :team
+  belongs_to :user
 
-  has_many :team_users
-  has_many :users, :through => :team_users, :source => :user
-
-  has_many :events
-  
   validates :name, presence: true
-  validates :domain, presence: true
 
-
+  scope :recent , -> { order("id DESC")}
 end
 
 # == Schema Information
 #
-# Table name: teams
+# Table name: events
 #
 #  id         :integer          not null, primary key
 #  name       :string
-#  domain     :string
+#  user_id    :integer
+#  team_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

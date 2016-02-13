@@ -37,6 +37,8 @@ gem "simple_form"
 
 gem "active_link_to", :github => "xdite/active_link_to", :branch => "wrap_tag_css"
 
+gem "wice_grid"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

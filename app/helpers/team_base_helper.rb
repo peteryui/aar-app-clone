@@ -1,0 +1,2 @@
+module TeamBaseHelper
+end

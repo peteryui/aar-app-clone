@@ -35,6 +35,8 @@ gem 'font-awesome-sass', '~> 4.5.0'
 gem "devise"
 gem "simple_form"
 
+gem "active_link_to", :github => "xdite/active_link_to", :branch => "wrap_tag_css"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

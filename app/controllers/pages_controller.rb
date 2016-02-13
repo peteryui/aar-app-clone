@@ -11,7 +11,8 @@ class PagesController < ApplicationController
     if @team.present?
       redirect_to new_user_session_url(:subdomain => @team.domain)
     else
-      render :text => "Team is not exist"
+      flash["warning"] = "We don't have this domain"
+      redirect_to signin_url( :subdomain => false)
     end
     
   end

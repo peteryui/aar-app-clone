@@ -39,6 +39,25 @@ class EventsController < TeamsController
     end
   end
 
+  def edit
+    @event = Event.find(params[:id])
+    # TODO :permission check
+
+    drop_breadcrumb("Events", events_path)
+    drop_breadcrumb("Edit Event")
+
+  end
+
+  def update
+    @event = Event.find(params[:id])
+
+    if @event.update(event_params)
+      redirect_to event_path(@event)
+    else
+      render :edit
+    end
+  end
+
   def index
     @events_grid = initialize_grid(Event.recent)
     drop_breadcrumb("Events", events_path)

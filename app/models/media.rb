@@ -1,4 +1,5 @@
-class Medium < ActiveRecord::Base
+class Media < ActiveRecord::Base
+  mount_uploader :file_name, MediaUploader
 end
 
 # == Schema Information

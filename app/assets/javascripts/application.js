@@ -14,13 +14,16 @@
 //= require jquery_ujs
 //= require underscore
 //= require jquery.autogrow-textarea
+
 //= require turbolinks
 //= require bootstrap/dropdown
 //= require bootstrap/alert
 //= require wice_grid
-//= require bootstrap-markdown
+//= require bootstrap-markdown-bundle
 //= require dropzone
 
+// Prevent auto-mounting Dropzone instance
+Dropzone.autoDiscover = false;
 
 $(function() {
   $("textarea[data-provide='markdown']").each(function(index, element){

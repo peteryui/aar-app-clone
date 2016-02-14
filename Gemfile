@@ -43,6 +43,14 @@ gem "wice_grid"
 
 gem "figaro"
 
+gem "underscore-rails"
+gem 'carrierwave'
+gem "fog-aws"
+gem "fog"
+
+
+gem 'dropzonejs-rails'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

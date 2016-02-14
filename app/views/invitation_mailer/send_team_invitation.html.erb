@@ -7,4 +7,4 @@
 
 <%= @inviter.name %> has invited you to join <%= @team.name %>.
 
-<%= link_to "Accept Invitation", new_user_with_invitation_registration_url(@invitation.code) %>
+<%= link_to "Accept Invitation", new_user_with_invitation_registration_url(@invitation.code, :subdomain => @invitation.team.domain ) %>

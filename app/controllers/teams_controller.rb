@@ -22,7 +22,7 @@ class TeamsController < ApplicationController
 
   def drop_breadcrumb(title=nil, url=nil)
     title ||= @page_title
-    
+
     if title && url
       @breadcrumbs.push("<a href='#{url}'>#{title}</a>".html_safe)
     elsif title

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     get '/' => 'team_base#index'
     as :user do
       get "/sign_up_with_invitation/:id"   => "registrations#sign_up_with_invitation", :as => :new_user_with_invitation_registration
+      post "/create_with_invitation/:id" => "registrations#create_with_invitation", :as => :create_with_invitation_registration
     end
 
     resources :events do

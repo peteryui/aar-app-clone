@@ -25,13 +25,7 @@ class RegistrationsController < Devise::RegistrationsController
 
       return redirect_to account_organizations_path
     else
-      if @invitation.available_for_guest?
-        build_resource({})
-  
-      else
-        session[:previous_url] = request.original_url
-        redirect_to new_user_session_path
-      end
+      build_resource({})
     end
   end
 
@@ -45,11 +39,26 @@ class RegistrationsController < Devise::RegistrationsController
     super
   end
 
+  def create_with_invitation
+    @user = User.new(invitation_sign_up_params)
+    @user.skip_confirmation!
+
+    if @user.save!
+
+      sign_in @user
+      redirect_to root_url
+    else
+      render :sign_up_with_invitation
+    end
+  end
+
 
   private
 
 
-
+  def invitation_sign_up_params
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
   def sign_up_params
     params.require(:user).permit(:name, :email, :teams_attributes => [ :name, :domain ])
   end

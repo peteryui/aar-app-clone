@@ -2,23 +2,21 @@
   <div class="col-sm-8 col-sm-offset-4">
     <h2>Sign up</h2>
 
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name   )) do |f| %>
+    <%= simple_form_for(resource, as: resource_name, url: create_with_invitation_registration_path( @invitation.code)) do |f| %>
       <%= f.error_notification %>
 
 
       <div class="row">
         <div class="form-inputs col-sm-5">
 
-          <%= f.input :email,input_html: { value:  @invitation.email_address }, disabled: true,required: true, autofocus: true, :class => "" %>
+          <%= f.input :email,input_html: { value:  @invitation.email_address }, :readonly => true,required: true, autofocus: true, :class => "" %>
           <%= f.input :name %>
 
 
-            <%= f.fields_for :teams do |team| %>
-               <%= team.input :name, :label => "Team Name" %>
-               <%= team.input :domain, :label => "Team Domain" %>
 
+          <%= f.input :password, :label => "New password", :required => true, :autofocus => true %>
+          <%= f.input :password_confirmation, :label => "Confirm your new password", :required => true %>
 
-          <% end %>
         </div>
 
       </div>

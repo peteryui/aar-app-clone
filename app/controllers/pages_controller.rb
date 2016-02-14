@@ -12,8 +12,9 @@ class PagesController < ApplicationController
       redirect_to new_user_session_url(:subdomain => @team.domain)
     else
       flash["warning"] = "We don't have this domain"
+
       redirect_to signin_url( :subdomain => false)
     end
-    
+
   end
 end

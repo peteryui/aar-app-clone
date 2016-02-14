@@ -11,4 +11,8 @@
 #
 
 module EventsHelper
+
+  def render_event_name(event)
+    link_to(event.name,event_path(event))
+  end
 end

@@ -12,6 +12,11 @@
 
 class EventsController < TeamsController
 
+  def index
+    @events_grid = initialize_grid(Event.recent)
+    drop_breadcrumb("Events", events_path)
+  end
+  
   def new
     @event = @team.events.build
     drop_breadcrumb("Events", events_path)
@@ -58,10 +63,7 @@ class EventsController < TeamsController
     end
   end
 
-  def index
-    @events_grid = initialize_grid(Event.recent)
-    drop_breadcrumb("Events", events_path)
-  end
+
   protected
 
   def event_params

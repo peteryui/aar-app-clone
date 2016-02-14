@@ -11,17 +11,19 @@ Rails.application.routes.draw do
   constraints(Subdomain) do
     get '/' => 'team_base#index'
 
-    resources :events do 
+    resources :events do
       resources :reviews
     end
 
     resources :media_contents, only: [:create]
+
+    resources :invitations
   end
 
   get "/signin" => "pages#signin", :as => :signin
   post "/switch_domain" => "pages#switch_domain"
   root 'pages#welcome'
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

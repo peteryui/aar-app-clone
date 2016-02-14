@@ -9,18 +9,18 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-   
+
       <ul class="nav navbar-nav">
 
-        <%= active_link_to("Event", events_path, :wrap_tag => :li )%>
-
+        <%= active_link_to("Events", events_path, :wrap_tag => :li )%>
+        <%= active_link_to("Invitations", invitations_path, :wrap_tag => :li )%>
       </ul>
 
 
       <ul class="nav navbar-nav navbar-right">
        <% if !current_user %>
          <li> <%= link_to("註冊", new_user_registration_path) %> </li>
-     
+
          <li>  <%= link_to("登入", "/signin") %></li>
        <% else %>
          <li class="dropdown">

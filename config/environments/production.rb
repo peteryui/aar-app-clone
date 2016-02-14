@@ -66,8 +66,8 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {
-    :api_key  => Figaro.env.mailgun.api_key,
-    :api_host => Figaro.env.mailgun.api_host
+    :api_key  => Figaro.env.mailgun_api_key,
+    :api_host => Figaro.env.mailgun_api_host
   }
 
   config.action_mailer.default_url_options               = {

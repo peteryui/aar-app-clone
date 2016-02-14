@@ -1,0 +1,26 @@
+<div class="clearafix">
+
+  <%= grid(events_grid) do |g|
+
+      g.column :name => "#" do |event|
+        event.id
+      end
+    
+      g.column :name => "名稱" do |event|
+        render_event_name(event)
+      end
+    
+
+      g.column :name => "時間 " do |event|
+        event.created_at.to_s(:short)
+      end
+    
+    
+      g.column :name => "動作" do |event|
+        render :partial => "events/options", :locals => { :event => event }
+      end
+
+
+  end -%>
+
+</div>

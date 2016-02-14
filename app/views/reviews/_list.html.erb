@@ -1,0 +1,39 @@
+
+<div class="clearafix">
+
+
+<%= grid(reviews_grid) do |g|
+
+  g.column :name => "#" do |review|
+    review.id
+  end
+
+  g.column :name => "Subject" do |review|
+    render_review_subject(review)
+  end
+
+  g.column :name => "為什麼沒有達到預期的效果？實際上發生什麼事？差別在哪裡？" do |review|
+    review.should_happen.to_markdown
+  end
+
+  g.column :name => "下次應該怎麼做？" do |review|
+    review.improvement_plan.to_markdown
+  end
+
+  g.column  :name => "記錄者" do |review|
+    review.user.name
+  end
+
+  g.column  :name => "建立時間" do |review|
+    review.created_at.to_s(:short)
+  end
+
+
+  g.column do |review|
+    link_to("前往", event_review_path(review.event_id, review)) 
+  end
+
+
+end -%>
+
+</div>

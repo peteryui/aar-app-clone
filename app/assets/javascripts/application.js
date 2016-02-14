@@ -16,4 +16,5 @@
 //= require bootstrap/dropdown
 //= require bootstrap/alert
 //= require wice_grid
+//= require bootstrap-markdown
 //= require_tree .

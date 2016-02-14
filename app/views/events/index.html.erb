@@ -1,44 +1,18 @@
 
 <div class="row">
-<div class="col-sm-12 ">
+<div class="col-sm-9 col-sm-offset-1">
 
 <div class="clearafix">
   <div class="pull-right">
-    <%= link_to("New Event", new_event_path, :class => "btn btn-default btn-primary") %>
+    <%= ibutton("New Event", new_event_path, :class => "btn btn-default btn-primary", :iclass => "fa fa-plus") %>
   </div>
 
 </div>
 
-<br> <br>
-<div class="clearafix">
 
-<%= grid(@events_grid) do |g|
+<h2> 活動列表 </h2>
 
-  g.column do |event|
-    event.id
-  end
-
-  g.column do |event|
-    render_event_name(event)
-  end
-
-  g.column do |event|
-    event.user.name
-  end
-
-  g.column do |event|
-    event.created_at
-  end
-
-
-  g.column do |event|
-    link_to("Edit", edit_event_path(event)) 
-  end
-
-
-end -%>
-
-</div>
+     <%= render :partial => "events/list", :locals => { :events_grid => @events_grid } %>
 
   </div>
 </div>

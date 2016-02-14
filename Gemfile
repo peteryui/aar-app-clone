@@ -36,6 +36,8 @@ gem "devise"
 gem "simple_form"
 
 gem "active_link_to", :github => "xdite/active_link_to", :branch => "wrap_tag_css"
+gem "ultra_markdown", :github => "rocodev/ultra_markdown"
+gem 'rails-bootstrap-markdown'
 
 gem "wice_grid"
 

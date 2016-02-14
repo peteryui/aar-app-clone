@@ -58,6 +58,14 @@ class ReviewsController < TeamsController
     end 
   end
 
+  def show
+    @review = @event.reviews.find(params[:id])
+    drop_breadcrumb("Events", events_path)
+    drop_breadcrumb(@event.name,event_path(@event))
+    drop_breadcrumb(@review.subject)
+
+  end
+
 
   protected
 

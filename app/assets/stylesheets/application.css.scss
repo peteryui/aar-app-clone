@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require bootstrap-markdown
  *= require_self
  */
 
@@ -19,3 +20,47 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+
+.md-header.btn-toolbar{
+margin-left: 0px;
+
+}
+
+.md-editor textarea:focus{
+  padding-top: 10px;
+  padding-left: 5px;
+}
+.md-editor.active{
+
+}
+.md-preview{
+  padding-top: 15px;
+  padding-left: 15px;
+  background: #FBF9D0 !important;
+}
+
+.group:before, .group:after {
+   content: "";
+   display: table;
+}
+.group:after {
+   clear: both;
+}
+.group {
+   zoom: 1; /* IE6&7 */
+}
+
+.underline{
+  text-decoration: underline;
+}
+
+.grey{
+  color: grey;
+}
+
+.footer{
+  padding-top: 50px;
+}
+
+

@@ -36,6 +36,8 @@ gem 'font-awesome-sass', '~> 4.5.0'
 gem "devise"
 gem "simple_form"
 
+gem "aasm"
+
 gem "active_link_to", :github => "xdite/active_link_to", :branch => "wrap_tag_css"
 gem "ultra_markdown", :github => "rocodev/ultra_markdown"
 gem 'rails-bootstrap-markdown', :github => "xdite/rails-bootstrap-markdown"
@@ -68,7 +70,7 @@ group :development, :test do
   gem "letter_opener"
   gem 'sqlite3'
 
-  
+
 end
 
 group :development do
@@ -79,8 +81,7 @@ group :development do
   gem 'spring'
 end
 
-group :production do 
+group :production do
   gem "pg"
   gem "rails_12factor"
 end
-

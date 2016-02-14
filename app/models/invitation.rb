@@ -1,3 +1,6 @@
+class Invitation < ActiveRecord::Base
+end
+
 # == Schema Information
 #
 # Table name: invitations
@@ -12,17 +15,3 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #
-
-class InvitationsController < TeamsController
-
-  def index
-    drop_breadcrumb("Invitations", invitations_path)
-  end
-
-  def new
-    drop_breadcrumb("Invitations", invitations_path)
-    drop_breadcrumb("New Invitation", invitations_path)
-  end
-
-
-end

@@ -51,6 +51,27 @@ class InvitationsController < TeamsController
 
   end
 
+  def resend
+    #TODO only admin can resend invitation
+    invitation = @team.invitations.find(params[:id])
+
+    SendInvitationService.new(invitation.inviter, invitation.email_address, @team).perform!
+
+    redirect_to invitations_path
+  end
+
+
+
+    def cancel
+      #TODO only admin can cancel invitation
+
+      invitation = @team.invitations.find(params[:id])
+
+      invitation.cancel!
+
+      redirect_to invitations_path
+    end
+
   private
 
   def invitation_params

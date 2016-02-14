@@ -17,8 +17,16 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.default_url_options = { host: 'aar-app.dev' }
-  config.action_mailer.delivery_method = :letter_opener
-  
+ 
+  #config.action_mailer.delivery_method = :letter_opener
+ 
+   config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+    :api_key  => Figaro.env.mailgun_api_key,
+    :api_host => Figaro.env.mailgun_api_host
+  }
+   
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

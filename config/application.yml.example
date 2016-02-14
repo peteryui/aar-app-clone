@@ -1,4 +1,6 @@
 production:
   host: "actionreview.io"
+  mailgun_api_key: 
+  mailgun_api_host: 
 development:
   host: "aar-app.dev"

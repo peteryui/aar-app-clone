@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     resources :events do 
       resources :reviews
     end
+
+    resources :media_contents, only: [:create]
   end
 
   get "/signin" => "pages#signin", :as => :signin

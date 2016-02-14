@@ -19,6 +19,12 @@ GIT
       actionpack
 
 GIT
+  remote: git://github.com/xdite/rails-bootstrap-markdown.git
+  revision: ffd3f530993980c5b2a8f72d681f8523643c506b
+  specs:
+    rails-bootstrap-markdown (2.6.0)
+
+GIT
   remote: https://github.com/HashNuke/mailgun.git
   revision: 2a5058c97a4b0d5b8ded2f24bbd31d86647985f6
   specs:
@@ -201,7 +207,6 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.5.1)
       sprockets-rails
-    rails-bootstrap-markdown (2.6.0)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -308,7 +313,7 @@ DEPENDENCIES
   mailgun-rails
   pg
   rails (= 4.2.5.1)
-  rails-bootstrap-markdown
+  rails-bootstrap-markdown!
   rails_12factor
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

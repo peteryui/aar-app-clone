@@ -12,9 +12,38 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underscore
+//= require jquery.autogrow-textarea
 //= require turbolinks
 //= require bootstrap/dropdown
 //= require bootstrap/alert
 //= require wice_grid
 //= require bootstrap-markdown
-//= require_tree .
+//= require dropzone
+
+
+$(function() {
+  $("textarea[data-provide='markdown']").each(function(index, element){
+    var $textarea = $(element);
+
+    $textarea.autogrow();
+    $textarea.dropzone({
+      clickable: false,
+      url: "/media_contents",
+      init: function() {
+        this.on("success", function(file, responseText){
+           match = responseText.file_name.url.match(/\.(jpg|png|gif)\b/);
+           if (match != null) {
+           
+               var imageString = "\n![](" + responseText.file_name.url + ")";
+           } else {
+               var imageString = "\n<" + responseText.file_name.url + ">";
+           }
+         
+          $textarea.val($textarea.val() + imageString);
+          $textarea.trigger("change"); // to also trigger auto-grow plugin
+        });
+      }
+    });
+  });
+});

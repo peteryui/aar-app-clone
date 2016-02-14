@@ -3,13 +3,13 @@
 
   <div class="clearafix">
     <div class="pull-right">
-      <%= ibutton("Edit", edit_event_review_path(@event, @review), :class => "btn btn-  default", :iclass => "fa fa-pencil-square-o") %>
-
+      <%= ibutton("Edit", edit_event_review_path(@event, @review), :class => "btn btn-default", :iclass => "fa fa-pencil-square-o") %>
+      <%= ibutton("", event_review_path(@event, @review), :class => "grey btn btn-default", :iclass => "fa fa-trash", :method => :delete, :data => { :confirm => "Are your sure?"}) %>
 
     </div>
 
   </div>
-    <h2> <%= @review.subject %> </h2>
+  <h2> <%= @review.subject %> </h2>
 
 <hr>
 <h3> 為什麼沒有達到預期的效果？實際上發生什麼事？差別在哪裡？ </h3>

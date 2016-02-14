@@ -32,11 +32,13 @@ class ReviewsController < TeamsController
 
     if @review.save
 
+      flash[:notice] = "Review ##{@review.id} 已建立"
       if params["commit"] != "Submit"
         redirect_to new_event_review_path(@event)
       else
         redirect_to event_review_path(@event,@review)
       end
+
     else
       render :new
     end
@@ -67,8 +69,16 @@ class ReviewsController < TeamsController
     @review = @event.reviews.find(params[:id])
     drop_breadcrumb("Events", events_path)
     drop_breadcrumb(@event.name,event_path(@event))
-    drop_breadcrumb(@review.subject)
+    drop_breadcrumb("#{@review.subject}")
 
+  end
+
+  def destroy
+    @review = @event.reviews.find(params[:id])
+
+    @review.destroy
+
+    redirect_to event_path(@event)
   end
 
 

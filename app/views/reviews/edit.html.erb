@@ -5,6 +5,8 @@
     <%= f.input :should_happen, :label => "為什麼沒有達到預期的效果？實際上發生什麼事？差別在哪裡？" , :input_html => { :rows => 10, :data => { :provide => "markdown"} } %>
     <%= f.input :actual_happen, :label => "哪些方法有效？哪些無效？為什麼", :input_html => { :rows => 10, :data => { :provide => "markdown"} } %>
     <%= f.input :improvement_plan, :label => "下次應該怎麼做？" , :input_html => { :rows => 10, :data => { :provide => "markdown"} } %>
+
+
     <%= f.submit "Submit", :disable_with => 'Submiting...' %>
 
   <% end -%>

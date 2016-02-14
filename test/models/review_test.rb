@@ -12,9 +12,9 @@ end
 #
 #  id               :integer          not null, primary key
 #  subject          :string
-#  should_happen    :string
-#  actual_happen    :string
-#  improvement_plan :string
+#  should_happen    :text
+#  actual_happen    :text
+#  improvement_plan :text
 #  user_id          :integer
 #  event_id         :integer
 #  team_id          :integer

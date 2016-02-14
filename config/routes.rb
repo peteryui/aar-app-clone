@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   constraints(Subdomain) do
     get '/' => 'team_base#index'
 
-    resources :events
+    resources :events do 
+      resources :reviews
+    end
   end
 
   get "/signin" => "pages#signin", :as => :signin

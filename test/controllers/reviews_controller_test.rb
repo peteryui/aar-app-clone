@@ -1,21 +1,3 @@
-class Review < ActiveRecord::Base
-  belongs_to :event
-  belongs_to :user
-  belongs_to :team
-
-  validates :subject, presence: true
-
-
-
-  after_create :set_team
-
-
-  def set_team
-    self.team = self.event.team
-    self.save
-  end
-end
-
 # == Schema Information
 #
 # Table name: reviews
@@ -31,3 +13,11 @@ end
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #
+
+require 'test_helper'
+
+class ReviewsControllerTest < ActionController::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
+end

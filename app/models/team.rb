@@ -4,6 +4,7 @@ class Team < ActiveRecord::Base
   has_many :users, :through => :team_users, :source => :user
 
   has_many :events
+  has_many :reviews
   
   validates :name, presence: true
   validates :domain, presence: true

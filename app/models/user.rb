@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_many :team_users
   has_many :teams, :through => :team_users, :source => :team
 
+  has_many :reviews
+
   accepts_nested_attributes_for :teams
 
 end

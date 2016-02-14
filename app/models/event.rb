@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   belongs_to :team
   belongs_to :user
+  has_many :reviews
 
   validates :name, presence: true
 

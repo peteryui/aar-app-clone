@@ -5,7 +5,7 @@
 
 <%= form_tag switch_domain_path  do %>
 
-  <%= text_field_tag :domain %>.aar-app.dev
+  <%= text_field_tag :domain %>.<%= Figaro.env.host %>
 
   <div class="form-actions" style="padding-top:10px;">
     <%= button_tag :type => "submit", :class => " btn btn-default btn-primary"  do %>

@@ -1,0 +1,59 @@
+@import "compass";
+
+//http://www.zell-weekeat.com/compass-vertical-rhythm/
+
+$base-font-size: 20px; // Sets the base font size
+$base-line-height: 36px; // Sets the base line height
+
+$round-to-nearest-half-line: true; // Allows compass to round to  multiples of 0.5x line height
+$rhythm-unit: "rem"; // Sets rhythm unit to rem. Remove to use default em unit.
+
+$h1-fz: 45px;
+$h2-fz: 30px;
+$h3-fz: 24px;
+$h4-fz: 20px;
+$h5-fz: 16px;
+$h6-fz: 13px;
+
+@include establish-baseline;
+
+
+/* Standard Compass Version. At the time of writing this is v0.12.2.
+Thanks to Maximilien for noticing this */
+* html {
+  font-size: 125%; }
+
+html {
+  font-size: 20px;
+  line-height: 1.8em;
+}
+
+/* Experimental Compass Version. At the time of writing this is v1.0.0.alpha.18 */
+html {
+  font-size: 125%;
+  line-height: 1.8em;
+}
+
+h1 {
+  @include adjust-font-size-to($h1-fz);
+}
+
+h2 {
+  @include adjust-font-size-to($h2-fz);
+}
+
+h3 {
+  @include adjust-font-size-to($h3-fz);
+}
+
+h4 {
+  @include adjust-font-size-to($h4-fz);
+}
+
+h5 {
+  @include adjust-font-size-to($h5-fz);
+}
+
+h6 {
+  @include adjust-font-size-to($h6-fz);
+}

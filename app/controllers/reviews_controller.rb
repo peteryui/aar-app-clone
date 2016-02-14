@@ -20,7 +20,7 @@ class ReviewsController < TeamsController
 
   def new
     @review = @event.reviews.build
-    
+
     drop_breadcrumb("Events", events_path)
     drop_breadcrumb(@event.name,event_path(@event))
     drop_breadcrumb("New Review")
@@ -31,9 +31,14 @@ class ReviewsController < TeamsController
     @review.user = current_user
 
     if @review.save
-      redirect_to event_path(@event)
+
+      if params["commit"] != "Submit"
+        redirect_to new_event_review_path(@event)
+      else
+        redirect_to event_review_path(@event,@review)
+      end
     else
-      render :new 
+      render :new
     end
 
   end
@@ -52,10 +57,10 @@ class ReviewsController < TeamsController
     @review = @event.reviews.find(params[:id])
 
     if @review.update(review_params)
-      redirect_to event_review_path(@review.event_id, @review)     
+      redirect_to event_review_path(@review.event_id, @review)
     else
       render :edit
-    end 
+    end
   end
 
   def show

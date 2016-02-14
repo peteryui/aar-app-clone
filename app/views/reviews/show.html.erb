@@ -3,11 +3,11 @@
 
   <div class="clearafix">
     <div class="pull-right">
-      <%= ibutton("Edit", new_event_review_path(@event), :class => "btn btn-  default", :iclass => "fa fa-pencil-square-o") %>
+      <%= ibutton("Edit", edit_event_review_path(@event, @review), :class => "btn btn-  default", :iclass => "fa fa-pencil-square-o") %>
 
-   
+
     </div>
-  
+
   </div>
     <h2> <%= @review.subject %> </h2>
 

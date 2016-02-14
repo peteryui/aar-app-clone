@@ -48,9 +48,6 @@
     link_to("Edit", edit_event_review_path(review.event_id, review)) 
   end
 
-  g.column do |review|
-    link_to("Destroy", event_review_path(review.event_id, review), :method => :delete) 
-  end
 
 end -%>
 

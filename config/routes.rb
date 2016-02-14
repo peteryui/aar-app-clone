@@ -24,7 +24,12 @@ Rails.application.routes.draw do
 
     resources :media_contents, only: [:create]
 
-    resources :invitations
+    resources :invitations do
+      member do
+        delete :cancel
+        post :resend
+      end
+    end
   end
 
   get "/signin" => "pages#signin", :as => :signin

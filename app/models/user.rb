@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :team_users
   has_many :teams, :through => :team_users, :source => :team
 
-  #include TeamConcern
+  include TeamConcern
 
   has_many :reviews
 

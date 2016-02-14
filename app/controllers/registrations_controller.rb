@@ -1,6 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
 
-  #before_action :check_invitation_valid?, :only => [:sign_up_with_invitation, :create_with_invitation]
+  before_action :check_invitation_valid?, :only => [:sign_up_with_invitation, :create_with_invitation]
 
 
   def sign_up_with_invitation

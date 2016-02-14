@@ -44,6 +44,7 @@ class RegistrationsController < Devise::RegistrationsController
       @invitation.complete!
 
       sign_in @user
+      flash[:notice] = "Welcome to #{@team.name } Team"
       redirect_to root_url
     else
       render :sign_up_with_invitation

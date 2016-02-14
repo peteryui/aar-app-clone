@@ -1,0 +1,4 @@
+production:
+  host: "actionreview.io"
+development:
+  host: "aar-app.dev"

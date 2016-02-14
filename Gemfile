@@ -39,6 +39,9 @@ gem "active_link_to", :github => "xdite/active_link_to", :branch => "wrap_tag_cs
 
 gem "wice_grid"
 
+gem "figaro"
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -49,6 +52,7 @@ group :development, :test do
   gem "letter_opener"
   gem 'sqlite3'
 
+  
 end
 
 group :development do

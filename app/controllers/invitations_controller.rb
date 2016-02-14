@@ -57,6 +57,7 @@ class InvitationsController < TeamsController
 
     SendInvitationService.new(invitation.inviter, invitation.email_address, @team).perform!
 
+    flash[:notice] = "Resend invitation to #{invitation.email_address}"
     redirect_to invitations_path
   end
 

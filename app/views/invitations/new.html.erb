@@ -1,10 +1,12 @@
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
-  <%= simple_form_for @event do |f| -%>
-    <%= f.input :name %>
+    <%= simple_form_for [@invitation] do |f| %>
+          <%= f.input :email_address %>
 
-    <%= f.submit "Submit", :disable_with => 'Submiting...' %>
+      <%= f.submit "Send", :class => "btn btn-primary", :id => "submit_data" %>
 
-  <% end -%>
+
+    <% end %>
+
   </div>
 </div>

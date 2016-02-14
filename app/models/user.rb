@@ -6,13 +6,18 @@ class User < ActiveRecord::Base
 
 
   include EmailConfirmable
-  
+
   has_many :team_users
   has_many :teams, :through => :team_users, :source => :team
 
   has_many :reviews
 
   accepts_nested_attributes_for :teams
+
+  has_many :sent_invitations, :foreign_key => :inviter_id, :class_name => "Invitation"
+  has_many :received_invitations, :foreign_key => :invitee_id, :class_name => "Invitation"
+  has_many :available_invitations, -> { where(:invitations => { :status => :sent}) }, :foreign_key => :invitee_id, :class_name => "Invitation"
+
 
 end
 

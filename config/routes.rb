@@ -4,12 +4,18 @@ Rails.application.routes.draw do
 
   as :user do
     patch '/user/confirmation' => 'confirmations#update', :via => :patch, :as => :update_user_confirmation
+
   end
+
   devise_for :users, :controllers => { :confirmations => "confirmations", registrations: 'registrations', sessions: 'sessions' }
+
 
 
   constraints(Subdomain) do
     get '/' => 'team_base#index'
+    as :user do
+      get "/sign_up_with_invitation/:id"   => "registrations#sign_up_with_invitation", :as => :new_user_with_invitation_registration
+    end
 
     resources :events do
       resources :reviews

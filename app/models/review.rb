@@ -6,6 +6,7 @@ class Review < ActiveRecord::Base
   validates :subject, presence: true
 
 
+  scope :recent , -> { order("id DESC")}
 
   after_create :set_team
 

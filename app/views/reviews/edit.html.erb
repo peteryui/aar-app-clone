@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-sm-12 ">
+  <%= simple_form_for [@event, @review ] do |f| -%>
+    <%= f.input :subject %>
+    <%= f.input :should_happen, :label => "What was supposed to happen? What actually happened? Why were there differences?" %>
+    <%= f.input :actual_happen, :label => "What worked? What didn't? Why?" %>
+    <%= f.input :improvement_plan, :label => "What would you do differently next time?" %>
+    <%= f.submit "Submit", :disable_with => 'Submiting...' %>
+
+  <% end -%>
+  </div>
+</div>

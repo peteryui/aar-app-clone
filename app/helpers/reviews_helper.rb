@@ -15,4 +15,8 @@
 #
 
 module ReviewsHelper
+
+  def render_review_subject(review)
+    link_to(review.subject, event_review_path(review.event_id, review))
+  end
 end

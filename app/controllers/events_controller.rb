@@ -22,6 +22,9 @@ class EventsController < TeamsController
     @event = Event.find(params[:id])
     # TODO: permission check
 
+    @reviews_grid = initialize_grid(@event.reviews.recent)
+
+
     drop_breadcrumb("Events", events_path)
     drop_breadcrumb(@event.name,event_path(@event))
   end

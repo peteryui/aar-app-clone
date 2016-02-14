@@ -8,3 +8,54 @@
   </div>
 
 </div>
+
+
+
+<div class="clearafix">
+
+<%= grid(@reviews_grid) do |g|
+
+  g.column do |review|
+    review.id
+  end
+
+  g.column :name => "Subject" do |review|
+    render_review_subject(review)
+  end
+
+  g.column :name => "What was supposed to happen? What actually happened?" do |review|
+    review.should_happen
+  end
+
+  g.column :name => "What worked? What Didn't worked?" do |review|
+    review.actual_happen
+  end
+
+  g.column :name => "What would you do differently next time?" do |review|
+    review.improvement_plan
+  end
+
+  g.column  :name => "Authour" do |review|
+    review.user.name
+  end
+
+  g.column  :name => "Create Time"do |review|
+    review.created_at
+  end
+
+
+  g.column do |review|
+    link_to("Edit", edit_event_review_path(review.event_id, review)) 
+  end
+
+  g.column do |review|
+    link_to("Destroy", event_review_path(review.event_id, review), :method => :delete) 
+  end
+
+end -%>
+
+</div>
+
+
+</div>
+</div>

@@ -38,6 +38,25 @@ class ReviewsController < TeamsController
 
   end
 
+  def edit
+    @review = @event.reviews.find(params[:id])
+    # TODO : Add permission check
+
+
+    drop_breadcrumb("Events", events_path)
+    drop_breadcrumb(@event.name,event_path(@event))
+    drop_breadcrumb("Edit Review")
+  end
+
+  def update
+    @review = @event.reviews.find(params[:id])
+
+    if @review.update(review_params)
+      redirect_to event_review_path(@review.event_id, @review)     
+    else
+      render :edit
+    end 
+  end
 
 
   protected

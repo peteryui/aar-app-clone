@@ -12,6 +12,42 @@
 
 <h2> 邀請列表 </h2>
 
+<div class="span12">
+  <h3> Invitations </h3>
+
+
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th> Inivitation ID </th>
+        <th> Email Address </th>
+        <th> Sent By </th>
+        <th> Sent Date </th>
+        <th> Status </th>
+        <th> Action </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @sent_invitations.each do |invitation| %>
+        <tr>
+          <td> <%= render_invitation_id(invitation) %></td>
+          <td> <%= render_invitation_email_address(invitation) %></td>
+          <td> <%= render_invitation_iniviter_name(invitation) %></td>
+          <td> <%= render_invitation_created_at(invitation) %></td>
+          <td> <%= render_invitation_status(invitation) %></td>
+          <td>
+            <% if invitation.sent? %>
+              <%= render_invitation_cancel_btn(invitation) %>
+              <%= render_invitation_resend_btn(invitation) %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
 
   </div>
 </div>

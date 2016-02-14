@@ -11,6 +11,27 @@ class Team < ActiveRecord::Base
   validates :domain, presence: true
 
 
+  def grant_first_user_as_admin
+    reload
+    first_user = users.first
+    grant_admin!(first_user)
+
+  end
+
+  def grant_admin!(user)
+    team_user(user).grant_admin!
+  end
+
+  def remove_admin!(user)
+    team_user(user).remove_admin!
+  end
+
+  def team_user(user)
+    team_users.find_by_user_id(user.id)
+  end
+
+
+
 end
 
 # == Schema Information

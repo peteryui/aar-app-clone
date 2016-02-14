@@ -17,6 +17,7 @@ class InvitationsController < TeamsController
 
   def index
     drop_breadcrumb("Invitations", invitations_path)
+      @sent_invitations = @team.invitations.recent
   end
 
   def new

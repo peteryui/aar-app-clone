@@ -14,6 +14,16 @@ class EventsController < TeamsController
 
   def new
     @event = @team.events.build
+    drop_breadcrumb("Events", events_path)
+    drop_breadcrumb("New Event")
+  end
+
+  def show
+    @event = Event.find(params[:id])
+    # TODO: permission check
+
+    drop_breadcrumb("Events", events_path)
+    drop_breadcrumb(@event.name,event_path(@event))
   end
 
   def create
@@ -28,6 +38,7 @@ class EventsController < TeamsController
 
   def index
     @events_grid = initialize_grid(Event.recent)
+    drop_breadcrumb("Events", events_path)
   end
   protected
 

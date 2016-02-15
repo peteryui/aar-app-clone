@@ -2,6 +2,7 @@ class Review < ActiveRecord::Base
   belongs_to :event
   belongs_to :user
   belongs_to :team
+  has_many :todos
 
   acts_as_commentable
 

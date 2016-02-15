@@ -3,6 +3,7 @@
 
   <div class="clearafix">
     <div class="pull-right">
+      <%= ibutton("New Todo", new_review_todo_path(@review) , :remote => true, :class => "btn btn-default", :iclass => "fa fa-plus") %>
       <%= ibutton("Edit", edit_event_review_path(@review.event_id, @review), :class => "btn btn-default", :iclass => "fa fa-pencil-square-o") %>
       <%= ibutton("", event_review_path(@review.event_id, @review), :class => "grey btn btn-default", :iclass => "fa fa-trash", :method => :delete, :data => { :confirm => "Are your sure?"}) %>
 

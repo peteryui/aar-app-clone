@@ -3,6 +3,9 @@ class Review < ActiveRecord::Base
   belongs_to :user
   belongs_to :team
 
+  acts_as_commentable
+
+
   validates :subject, presence: true
 
 

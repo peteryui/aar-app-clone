@@ -70,6 +70,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts_as_commentable (4.0.2)
     addressable (2.4.0)
     airbrake (5.0.5)
       airbrake-ruby (~> 1.0)
@@ -318,6 +319,7 @@ PLATFORMS
 DEPENDENCIES
   aasm
   active_link_to!
+  acts_as_commentable
   annotate
   bootstrap-sass
   byebug

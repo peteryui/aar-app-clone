@@ -38,6 +38,9 @@ gem "simple_form"
 
 gem "aasm"
 
+gem 'acts_as_commentable'
+
+
 gem "active_link_to", :github => "xdite/active_link_to", :branch => "wrap_tag_css"
 gem "ultra_markdown", :github => "rocodev/ultra_markdown"
 gem 'rails-bootstrap-markdown', :github => "xdite/rails-bootstrap-markdown"

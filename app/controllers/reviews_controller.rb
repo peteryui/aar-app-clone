@@ -59,7 +59,9 @@ class ReviewsController < TeamsController
     @review = @event.reviews.find(params[:id])
 
     if @review.update(review_params)
+
       redirect_to event_review_path(@review.event_id, @review)
+
     else
       render :edit
     end
@@ -67,6 +69,8 @@ class ReviewsController < TeamsController
 
   def show
     @review = @event.reviews.find(params[:id])
+
+
     drop_breadcrumb("Events", events_path)
     drop_breadcrumb(@event.name,event_path(@event))
     drop_breadcrumb("#{@review.subject}")

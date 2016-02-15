@@ -11,7 +11,7 @@ module TeamConcern
   end
 
   def current_team
-    teams.where("role != ?", "leave").first
+    teams.where.not(:role => "leave").first
   end
 
   def belongs_to_team?(team)

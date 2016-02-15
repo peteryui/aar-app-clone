@@ -22,6 +22,10 @@ Rails.application.routes.draw do
       resources :reviews
     end
 
+    resources :review do
+      resources :comments, :controller => "review_comments"
+    end
+
     resources :media_contents, only: [:create]
 
     resources :invitations do

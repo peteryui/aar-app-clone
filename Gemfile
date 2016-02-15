@@ -36,6 +36,9 @@ gem 'font-awesome-sass', '~> 4.5.0'
 gem "devise"
 gem "simple_form"
 
+gem 'gravatar_image_tag'
+
+
 gem "aasm"
 
 gem 'acts_as_commentable'

@@ -1,0 +1,24 @@
+<li class="list-group-item">
+  <div class="row">
+
+    <div class="action pull-right" style="margin-right:20px;">
+
+        <%# ibutton(" ", edit_project_project_update_path(@project,log), :remote => true, :iclass => "fa fa-pencil", :class => "btn btn-primary btn-xs") %>
+
+        <%# ibutton("", project_project_update_path(@project,log), :method => :delete, :iclass => "glyphicon glyphicon-trash", :class => "btn btn-danger btn-xs") %>
+
+
+    </div>
+
+    <div class="col-xs-2 col-md-1">         <%= render_user_avatar(log.user) %>    </div>
+    <div class="col-xs-10 col-md-11">
+      <div class="group ">
+        <%= render_review_comment_content(log) %>
+
+    </div>
+    <div class="mic-info pull-right">
+        By: <%= render_user_name(log.user) %> on  <span class="underline"><%= log.updated_at.to_s(:short) %> </span>
+    </div>
+</div>
+</div>
+</li>

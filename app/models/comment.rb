@@ -4,6 +4,8 @@ class Comment < ActiveRecord::Base
 
   belongs_to :commentable, :polymorphic => true
 
+  validates :comment, presence: true
+
   default_scope -> { order('created_at ASC') }
 
   # NOTE: install the acts_as_votable plugin if you

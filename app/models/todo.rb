@@ -7,6 +7,8 @@ class Todo < ActiveRecord::Base
 
   validates :subject, presence: true
 
+  include AASM
+  
   aasm :column => :status do
     state :open, :initial => true
     state :pending

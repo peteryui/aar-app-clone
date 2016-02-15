@@ -18,6 +18,9 @@
 //= require turbolinks
 //= require bootstrap/dropdown
 //= require bootstrap/alert
+//= require bootstrap/alert
+//= require bootstrap/modal
+//= require bootstrap/tooltip
 //= require wice_grid
 //= require bootstrap-markdown-bundle
 //= require dropzone
@@ -37,12 +40,12 @@ $(function() {
         this.on("success", function(file, responseText){
            match = responseText.file_name.url.match(/\.(jpg|png|gif)\b/);
            if (match != null) {
-           
+
                var imageString = "\n![](" + responseText.file_name.url + ")";
            } else {
                var imageString = "\n<" + responseText.file_name.url + ">";
            }
-         
+
           $textarea.val($textarea.val() + imageString);
           $textarea.trigger("change"); // to also trigger auto-grow plugin
         });

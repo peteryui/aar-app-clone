@@ -5,6 +5,7 @@ class Review < ActiveRecord::Base
 
   acts_as_commentable
 
+  has_many :comments, :as => :commentable
 
   validates :subject, presence: true
 

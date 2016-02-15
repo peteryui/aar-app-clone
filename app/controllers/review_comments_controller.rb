@@ -1,6 +1,6 @@
 class ReviewCommentsController < TeamsController
 
-  before_action :find_review, :only => [:create]
+  before_action :find_review
 
   def create
 
@@ -13,6 +13,29 @@ class ReviewCommentsController < TeamsController
     else
       render "reviews/show"
     end
+
+  end
+
+  def edit
+    @comment = @review.comments.find(params[:id])
+  end
+
+  def update
+    @comment = @review.comments.find(params[:id])
+
+    if @comment.update(comment_params)
+      redirect_to event_review_path(@review.event_id, @review)
+    else
+      render :edit
+    end
+
+  end
+
+  def destroy
+    @comment = @review.comments.find(params[:id])
+    @comment.destroy
+
+    redirect_to event_review_path(@review.event_id, @review)
 
   end
 

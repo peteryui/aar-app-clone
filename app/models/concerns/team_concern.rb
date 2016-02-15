@@ -29,27 +29,7 @@ module TeamConcern
   end
 
   def join_team(team)
-    team_user = team_user(team)
-
-    if team_user.present?
-      if team_user.leave?
-        team_user.join!
-      else
-        return false
-      end
-    else
-      if current_team.present?
-        if self.team_role(current_team) == "admin"
-          return false
-        else
-          self.leave_team(current_team)
-          team.users << self
-        end
-      else
-          team.users << self
-      end
-    end
-
+    team.users << self
   end
 
   def leave_team(team)

@@ -5,7 +5,8 @@
 
   <!-- Single button -->
   <div class="btn-group pull-right">
-    <button type="button" class="btn btn-default"> Submit </button>
+
+    <button type="button" class="btn btn-default" onclick="$('#search_type').val('store'); $('#new_comment').trigger('submit.rails');" > Submit </button>
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span> <span class="sr-only">Toggle Dropdown</span> </button>
 
 

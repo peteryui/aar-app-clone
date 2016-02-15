@@ -3,8 +3,8 @@
 
   <div class="clearafix">
     <div class="pull-right">
-      <%= ibutton("Edit", edit_event_review_path(@event, @review), :class => "btn btn-default", :iclass => "fa fa-pencil-square-o") %>
-      <%= ibutton("", event_review_path(@event, @review), :class => "grey btn btn-default", :iclass => "fa fa-trash", :method => :delete, :data => { :confirm => "Are your sure?"}) %>
+      <%= ibutton("Edit", edit_event_review_path(@review.event_id, @review), :class => "btn btn-default", :iclass => "fa fa-pencil-square-o") %>
+      <%= ibutton("", event_review_path(@review.event_id, @review), :class => "grey btn btn-default", :iclass => "fa fa-trash", :method => :delete, :data => { :confirm => "Are your sure?"}) %>
 
     </div>
 
@@ -26,7 +26,7 @@
 
 
 
-  
+
 
 
 <%= render :partial => "review_comments/comment_list" %>

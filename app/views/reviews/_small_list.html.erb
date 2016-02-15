@@ -1,0 +1,37 @@
+
+<div class="clearafix">
+
+
+<%= grid(reviews_grid) do |g|
+
+  g.column :name => "#" do |review|
+    review.id
+  end
+
+  g.column :name => "檢討主題" do |review|
+    render_review_subject(review)
+  end
+
+
+  g.column :name => "留言數量" do |review|
+    review.comments_count
+  end
+
+
+  g.column  :name => "記錄者" do |review|
+    review.user.name
+  end
+
+  g.column  :name => "更新時間" do |review|
+    review.updated_at.to_s(:short)
+  end
+
+
+  g.column do |review|
+    link_to("前往", event_review_path(review.event_id, review))
+  end
+
+
+end -%>
+
+</div>

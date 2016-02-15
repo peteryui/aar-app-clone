@@ -6,6 +6,7 @@ class ReviewCommentsController < TeamsController
 
     @comment = @review.comments.build(comment_params)
     @comment.user = current_user
+    @comment.team = @team
 
     if @comment.save
       flash[:notice] = "成功留言"

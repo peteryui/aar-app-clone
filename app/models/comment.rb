@@ -3,10 +3,11 @@ class Comment < ActiveRecord::Base
   include ActsAsCommentable::Comment
 
   belongs_to :commentable, :polymorphic => true, :counter_cache => true
+  belongs_to :team
   validates :comment, presence: true
 
   default_scope -> { order('created_at ASC') }
-
+  scope :recent , -> { order("id DESC")}
   # NOTE: install the acts_as_votable plugin if you
   # want user to vote on the quality of comments.
   #acts_as_voteable
@@ -28,6 +29,7 @@ end
 #  role             :string           default("comments")
 #  created_at       :datetime
 #  updated_at       :datetime
+#  team_id          :integer
 #
 # Indexes
 #

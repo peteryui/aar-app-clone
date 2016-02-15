@@ -3,9 +3,3 @@
 
 <%= render :partial => "review_comments/list" %>
 <%= render :partial => "review_comments/comment_form" %>
-
-<%= simple_form_for [@review, Comment.new  ] do |f| %>
-
-  <%= f.input :comment, :label => "Comments ( support Markdown syntax) ", :input_html => { :rows => 10, :data => { :provide => "markdown"} } %>
-  <%= f.submit "Submit", :disable_with => 'Submiting...', :class => "btn pull-right" %>
-<% end %>

@@ -1,0 +1,39 @@
+
+<div class="clearafix">
+
+
+<%= grid(comments_grid) do |g|
+
+  g.column :name => "#" do |comment|
+    comment.id
+  end
+
+  g.column :name => "留言內容" do |comment|
+    comment.comment.to_markdown
+  end
+
+  g.column :name => "檢討主題" do |comment|
+
+
+    render_review_subject(comment.commentable)
+  end
+
+
+
+  g.column  :name => "留言者" do |comment|
+    comment.user.name
+  end
+
+  g.column  :name => "建立時間" do |comment|
+    comment.created_at.to_s(:short)
+  end
+
+
+  g.column do |comment|
+    link_to("前往", event_review_path(comment.commentable.event_id, comment.commentable))
+  end
+
+
+end -%>
+
+</div>

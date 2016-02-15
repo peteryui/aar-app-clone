@@ -16,7 +16,7 @@ class EventsController < TeamsController
     @events_grid = initialize_grid(Event.recent)
     drop_breadcrumb("Events", events_path)
   end
-  
+
   def new
     @event = @team.events.build
     drop_breadcrumb("Events", events_path)
@@ -29,6 +29,8 @@ class EventsController < TeamsController
 
     @reviews_grid = initialize_grid(@event.reviews.recent)
 
+    @comments = Comment.where(:commentable => @event.reviews).recent
+    @comments_grid = initialize_grid(@comments)
 
     drop_breadcrumb("Events", events_path)
     drop_breadcrumb(@event.name,event_path(@event))

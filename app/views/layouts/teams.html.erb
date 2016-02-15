@@ -3,6 +3,7 @@
 <head>
   <%= render_team_page_title_tag %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+ <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -17,10 +18,12 @@
 
  </div>
 
+ <%= render :partial => "common/footer" %>
+
 
  <%= render :partial => "common/bootstrap_modal" %>
 
- <%= javascript_include_tag "application" %>
+
 
  <%= yield :handwrite_javascript %>
 

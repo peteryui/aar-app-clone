@@ -2,11 +2,30 @@
 <div class="col-sm-9 col-sm-offset-1">
 
   <div class="clearafix">
-    <div class="pull-right">
-      <%= ibutton("New Todo", new_review_todo_path(@review) , :remote => true, :class => "btn btn-default", :iclass => "fa fa-plus") %>
-      <%= ibutton("Edit", edit_event_review_path(@review.event_id, @review), :class => "btn btn-default", :iclass => "fa fa-pencil-square-o") %>
-      <%= ibutton("", event_review_path(@review.event_id, @review), :class => "grey btn btn-default", :iclass => "fa fa-trash", :method => :delete, :data => { :confirm => "Are your sure?"}) %>
 
+
+    <div class="action pull-right" style="margin-right:20px;">
+
+      <%= ibutton("New Todo", new_review_todo_path(@review) , :remote => true, :class => "btn btn-default", :iclass => "fa fa-plus") %>
+
+
+        <!-- Split button -->
+        <div class="btn-group  btn-group">
+          <button type="button" class="btn btn btn-default">修改選項</button>
+          <button type="button" class="btn btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu pull-right">
+            <li>  <%= ibutton("編輯", edit_event_review_path(@review.event_id, @review), :remote => true, :iclass => "fa fa-pencil") %>
+            </li>
+
+            <li>
+              <%= ibutton("刪除", event_review_path(@review.event_id, @review), :method => :delete, :iclass => "glyphicon glyphicon-trash", :data => { :confirm => "Are you sure?"}) %>
+
+            </li>
+          </ul>
+        </div>
     </div>
 
   </div>

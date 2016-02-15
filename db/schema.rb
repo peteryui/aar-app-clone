@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160215065715) do
+ActiveRecord::Schema.define(version: 20160215070512) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "title",            limit: 50, default: ""
@@ -94,7 +94,10 @@ ActiveRecord::Schema.define(version: 20160215065715) do
     t.integer  "review_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "status"
   end
+
+  add_index "todos", ["status"], name: "index_todos_on_status"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

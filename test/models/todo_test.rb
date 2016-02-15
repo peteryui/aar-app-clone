@@ -19,4 +19,9 @@ end
 #  review_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  status     :string
+#
+# Indexes
+#
+#  index_todos_on_status  (status)
 #

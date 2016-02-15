@@ -6,6 +6,25 @@ class Todo < ActiveRecord::Base
   belongs_to :review, :counter_cache => true
 
   validates :subject, presence: true
+
+  aasm :column => :status do
+    state :open, :initial => true
+    state :pending
+    state :closed
+
+    event :pend do
+      transitions :to => :pending, :from => [:open]
+    end
+
+    event :close do
+      transitions :to => :closed, :from => [:open]
+    end
+
+    event :open do
+      transitions :to => :open, :from => [:close, :pending]
+    end
+  end
+
 end
 
 # == Schema Information
@@ -21,4 +40,9 @@ end
 #  review_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  status     :string
+#
+# Indexes
+#
+#  index_todos_on_status  (status)
 #

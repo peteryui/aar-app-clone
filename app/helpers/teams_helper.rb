@@ -10,4 +10,10 @@
 #
 
 module TeamsHelper
+  def render_team_page_title_tag
+    # fallback to site_name if @page_title has never been set
+    title_tag(page_title || @team.name)
+  end
+
+
 end

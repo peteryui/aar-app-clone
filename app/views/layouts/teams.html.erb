@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= @team.name %></title>
+  <%= render_team_page_title_tag %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 
  <div class="container-fluid">
-  
+
    <%= render "common/team_navbar" %>
    <%= notice_message %>
    <%= render_breadcrumb %>
@@ -19,7 +18,12 @@
  </div>
 
 
- <%= render "common/footer" %>
+ <%= render :partial => "common/bootstrap_modal" %>
+
+ <%= javascript_include_tag "application" %>
+
+ <%= yield :handwrite_javascript %>
+
 
 </body>
 </html>

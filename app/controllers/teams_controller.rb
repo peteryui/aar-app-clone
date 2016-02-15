@@ -14,6 +14,7 @@ class TeamsController < ApplicationController
   before_action :find_this_team
   before_action :set_breadcrumbs
 
+
   layout "teams"
 
   def set_breadcrumbs
@@ -29,6 +30,20 @@ class TeamsController < ApplicationController
       @breadcrumbs.push("#{title}".html_safe)
     end
   end
+
+    helper_method :set_page_title
+
+    # will also append current page number and the site name
+    def set_page_title(title)
+      if params[:page]
+        @page_title = SeoHelper.format_current_page(title, params[:page])
+      else
+        @page_title = title
+      end
+
+
+      @page_title = SeoHelper.format_site_name( @page_title + " | #{@team.name} ", SeoHelper.configuration.site_name)
+    end
 
 
 

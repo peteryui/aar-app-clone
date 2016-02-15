@@ -3,9 +3,9 @@
 
     <div class="action pull-right" style="margin-right:20px;">
 
-        <%# ibutton(" ", edit_project_project_update_path(@project,log), :remote => true, :iclass => "fa fa-pencil", :class => "btn btn-primary btn-xs") %>
+        <%= ibutton(" ", edit_review_comment_path(@review,log), :remote => true, :iclass => "fa fa-pencil", :class => "btn btn-primary btn-xs") %>
 
-        <%# ibutton("", project_project_update_path(@project,log), :method => :delete, :iclass => "glyphicon glyphicon-trash", :class => "btn btn-danger btn-xs") %>
+        <%= ibutton("", review_comment_path(@review,log), :method => :delete, :iclass => "glyphicon glyphicon-trash", :class => "btn btn-danger btn-xs") %>
 
 
     </div>

@@ -13,6 +13,7 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  comments_count   :integer          default(0)
+#  todos_count      :integer          default(0)
 #
 
 class ReviewsController < TeamsController
@@ -71,6 +72,9 @@ class ReviewsController < TeamsController
   def show
     @review = @event.reviews.find(params[:id]) || Review.find(params[:review_id])
     @comments = @review.comments
+
+    @todos = @review.todos
+
 
     drop_breadcrumb("Events", events_path)
     drop_breadcrumb(@event.name,event_path(@event))

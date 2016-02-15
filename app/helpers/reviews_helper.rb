@@ -13,6 +13,7 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  comments_count   :integer          default(0)
+#  todos_count      :integer          default(0)
 #
 
 module ReviewsHelper

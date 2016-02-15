@@ -1,9 +1,9 @@
 class Todo < ActiveRecord::Base
 
   belongs_to :user
-  belongs_to :team
-  belongs_to :event
-  belongs_to :review
+  belongs_to :team, :counter_cache => true
+  belongs_to :event, :counter_cache => true
+  belongs_to :review, :counter_cache => true
 
   validates :subject, presence: true
 end

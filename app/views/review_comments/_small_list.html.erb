@@ -24,13 +24,8 @@
     comment.user.name
   end
 
-  g.column  :name => "建立時間" do |comment|
+  g.column  :name => "留言時間" do |comment|
     comment.created_at.to_s(:short)
-  end
-
-
-  g.column do |comment|
-    link_to("前往", event_review_path(comment.commentable.event_id, comment.commentable))
   end
 
 

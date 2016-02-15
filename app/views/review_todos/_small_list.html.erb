@@ -1,0 +1,37 @@
+
+<div class="clearafix">
+
+
+<%= grid(todos_grid) do |g|
+
+  g.column :name => "#" do |todo|
+    todo.id
+  end
+
+
+  g.column :name => "Todo 主題" do |todo|
+    link_to(todo.subject, review_todo_path(todo.review, todo))
+  end
+
+
+  g.column :name => "檢討主題" do |todo|
+    render_review_subject(todo.review)
+  end
+
+
+
+
+
+  g.column  :name => "留言者" do |todo|
+    todo.user.name
+  end
+
+  g.column  :name => "建立時間" do |todo|
+    todo.created_at.to_s(:short)
+  end
+
+
+
+end -%>
+
+</div>

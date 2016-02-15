@@ -25,12 +25,18 @@
 <%= @review.improvement_plan.to_markdown %>
 
 
+  <% if @todos.present? %>
 
+    <%= render :partial => "review_todos/todo_list" %>
 
+    <% end %>
 
+    <% if @comments.present? %>
+      <%= render :partial => "review_comments/comment_list" %>
+    <% end %>
 
-
-<%= render :partial => "review_comments/comment_list" %>
+    <hr>
+    <%= render :partial => "review_comments/comment_form" %>
 
   </div>
 </div>

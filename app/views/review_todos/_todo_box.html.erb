@@ -1,0 +1,21 @@
+<li class="list-group-item">
+  <div class="row">
+
+    <div class="action pull-right" style="margin-right:20px;">
+        <%= ibutton(" ", edit_review_todo_path(@review,log), :remote => true, :iclass => "fa fa-pencil", :class => "btn btn-primary btn-xs") %>
+        <%= ibutton("", review_todo_path(@review,log), :method => :delete, :iclass => "glyphicon glyphicon-trash", :class => "btn btn-danger btn-xs") %>
+    </div>
+
+    <div class="col-xs-12">
+
+      <div class="group ">
+        <h6 class="underline"> <%= log.subject %>  </h6>
+
+        <%= log.content.to_markdown %>
+      </div>
+      <div class="mic-info pull-right">
+        By: <%= render_user_name(log.user) %> on  <span class="underline"><%= log.updated_at.to_s(:short) %> </span>
+      </div>
+    </div>
+</div>
+</li>

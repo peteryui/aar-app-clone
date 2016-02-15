@@ -1,28 +1,37 @@
 
 <div class="row">
-<div class="col-sm-4 ">
-
-
-
-  <div class="pull-right">
-    <%= ibutton("New Review", new_event_review_path(@event), :class => "btn btn-xs btn-default btn-primary", :iclass => "fa fa-plus") %>
-  </div>
-
-    <h2> 問題列表 </h2>
-
-        <%= render :partial => "reviews/small_list", :locals => { :reviews_grid => @reviews_grid } %>
-
-
-  </div>
 
   <div class="col-sm-4 ">
 
+      <h2> 待辦列表 </h2>
+          <%= render :partial => "review_todos/small_list", :locals => { :todos_grid => @todos_grid } %>
 
+  </div>
+
+
+    <div class="col-sm-4 ">
 
       <h2> 討論列表 </h2>
           <%= render :partial => "review_comments/small_list", :locals => { :comments_grid => @comments_grid } %>
 
     </div>
+
+
+
+      <div class="col-sm-4 ">
+
+
+
+        <div class="pull-right">
+          <%= ibutton("New Review", new_event_review_path(@event), :class => "btn btn-xs btn-default btn-primary", :iclass => "fa fa-plus") %>
+        </div>
+
+          <h2> 問題列表 </h2>
+
+              <%= render :partial => "reviews/small_list", :locals => { :reviews_grid => @reviews_grid } %>
+
+
+      </div>
 
 
 </div>

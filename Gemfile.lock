@@ -122,6 +122,7 @@ GEM
     concurrent-ruby (1.0.0)
     crass (1.0.2)
     curb (0.9.1)
+    dalli (2.7.6)
     debug_inspector (0.0.2)
     devise (3.5.6)
       bcrypt (~> 3.0)
@@ -200,6 +201,7 @@ GEM
       actionmailer
       activesupport
       curb
+    memcachier (0.0.2)
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
@@ -327,6 +329,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.1.0)
   compass-rails
+  dalli
   devise
   dropzonejs-rails
   figaro
@@ -339,6 +342,7 @@ DEPENDENCIES
   letter_opener
   mailgun!
   mailgun-rails
+  memcachier
   pg
   rails (= 4.2.5.1)
   rails-bootstrap-markdown!

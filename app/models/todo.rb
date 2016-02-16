@@ -8,7 +8,7 @@ class Todo < ActiveRecord::Base
   validates :subject, presence: true
 
   include AASM
-  
+
   aasm :column => :status do
     state :open, :initial => true
     state :pending
@@ -19,11 +19,11 @@ class Todo < ActiveRecord::Base
     end
 
     event :close do
-      transitions :to => :closed, :from => [:open]
+      transitions :to => :closed, :from => [:open, :pending]
     end
 
     event :open do
-      transitions :to => :open, :from => [:close, :pending]
+      transitions :to => :open, :from => [:closed, :pending]
     end
   end
 

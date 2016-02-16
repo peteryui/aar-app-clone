@@ -14,8 +14,7 @@
 
   g.column :name => "檢討主題" do |comment|
 
-
-    render_review_subject(comment.commentable)
+    link_to(comment.commentable.subject, event_review_path(@event, comment.commentable, :anchor => dom_id(comment)))
   end
 
 

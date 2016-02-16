@@ -24,7 +24,13 @@ Rails.application.routes.draw do
 
     resources :reviews do
       resources :comments, :controller => "review_comments"
-      resources :todos, :controller => "review_todos"
+      resources :todos, :controller => "review_todos" do
+        member do
+          post :mark_pending
+          post :mark_open
+          post :mark_closed
+        end
+      end
     end
 
     resources :media_contents, only: [:create]

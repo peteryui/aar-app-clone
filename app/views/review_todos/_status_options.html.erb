@@ -1,4 +1,19 @@
-<li><a href="#"> Open (TODO)</a></li>
-<li><a href="#"> Pending (TODO)</a></li>
-<li><a href="#"> Close (TODO)</a></li>
-<li role="separator" class="divider"></li>
+<% case todo.status
+
+  when "open" %>
+
+<li> <%= render_mark_todo_pending_btn(todo) %> </li>
+<li> <%= render_mark_todo_closed_btn(todo) %> </li>
+
+<% when "pending" %>
+
+<li> <%= render_mark_todo_open_btn(todo) %> </li>
+<li> <%= render_mark_todo_closed_btn(todo) %> </li>
+
+
+<% when "close" %>
+
+<li> <%= render_mark_todo_open_btn(todo) %> </li>
+<li> <%= render_mark_todo_pending_btn(todo) %> </li>
+
+<% end %>

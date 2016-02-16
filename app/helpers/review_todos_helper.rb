@@ -20,7 +20,21 @@ module ReviewTodosHelper
     when "pending"
       content_tag(:span, "Pending", :class => "label label-default")
     when "closed"
-      content_tag(:span, "Closed", :class => "label label-warning")
+      content_tag(:span, "Closed", :class => "label label-default")
     end
+  end
+
+
+  def render_todo_content_box_by_status(todo)
+
+    case todo.status
+    when "open"
+      render :partial => "review_todos/status/open", :locals => { :todo => todo }
+    when "pending"
+      render :partial => "review_todos/status/pending", :locals => { :todo => todo }
+    when "closed"
+      render :partial => "review_todos/status/closed", :locals => { :todo => todo }
+    end
+
   end
 end

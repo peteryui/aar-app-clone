@@ -9,9 +9,12 @@ class ReviewTodosController < TeamsController
 
   def show
     @todo = @review.todos.find(params[:id])
+
     drop_breadcrumb("Events", events_path)
     drop_breadcrumb(@event.name,event_path(@event))
     drop_breadcrumb("#{@review.subject}")
+
+
   end
 
   def edit

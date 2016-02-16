@@ -80,6 +80,7 @@ class ReviewsController < TeamsController
     drop_breadcrumb(@event.name,event_path(@event))
     drop_breadcrumb("#{@review.subject}")
 
+    set_page_title @review.subject
   end
 
   def destroy

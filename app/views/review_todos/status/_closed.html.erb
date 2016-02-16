@@ -8,15 +8,19 @@
 
         <%= todo.content.to_markdown %>
       </div>
-      <div class="mic-info pull-right">
-        By: <%= render_user_name(todo.user) %> on  <span class="underline"><%= todo.updated_at.to_s(:short) %> </span>
-      </div>
 
 
     </div>
 
-    <div class="col-xs-2">
-      <%= render :partial => "review_todos/box_options", :locals => { :todo => todo, :review => @review } %>
+    <div class="col-xs-2 ">
+
+      <div class="group">
+        <%= render :partial => "review_todos/box_options", :locals => { :todo => todo, :review => @review } %>
+      </div>
+      <div class="mic-info group">
+        By: <%= render_user_name(todo.user) %> on  <span class="underline"><%= todo.updated_at.to_s(:short) %> </span>
+      </div>
+
     </div>
 
   </div>

@@ -4,11 +4,9 @@
 
 
 
-    <%= render :partial => "review_todos/box_options", :locals => { :todo => todo, :review => @review } %>
 
 
-
-    <div class="col-xs-12" >
+    <div class="col-xs-10" >
       <div class="group ">
           <h6 >   <%= render_todo_status(todo)  %> <span class="underline"> <%= todo.subject %> </span> </h6>
 
@@ -19,6 +17,10 @@
       </div>
 
 
+    </div>
+
+    <div class="col-xs-2">
+      <%= render :partial => "review_todos/box_options", :locals => { :todo => todo, :review => @review } %>
     </div>
 
   </div>

@@ -1,9 +1,8 @@
 <li class="list-group-item">
   <div class="row">
 
-    <%= render :partial => "review_todos/box_options", :locals => { :todo => todo, :review => @review } %>
 
-    <div class="col-xs-12" style="text-decoration: line-through;" >
+    <div class="col-xs-10" style="text-decoration: line-through;" >
       <div class="group ">
           <h6 >   <%= render_todo_status(todo)  %> <span class="underline"> <%= todo.subject %> </span> </h6>
 
@@ -16,6 +15,9 @@
 
     </div>
 
+    <div class="col-xs-2">
+      <%= render :partial => "review_todos/box_options", :locals => { :todo => todo, :review => @review } %>
+    </div>
 
   </div>
 </li>

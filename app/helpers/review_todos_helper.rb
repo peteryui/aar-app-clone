@@ -13,4 +13,14 @@ module ReviewTodosHelper
   end
 
 
+  def render_todo_status(todo)
+    case todo.status
+    when "open"
+      content_tag(:span, "Open", :class => "label label-success")
+    when "pending"
+      content_tag(:span, "Pending", :class => "label label-default")
+    when "closed"
+      content_tag(:span, "Closed", :class => "label label-warning")
+    end
+  end
 end

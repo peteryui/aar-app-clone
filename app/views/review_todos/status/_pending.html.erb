@@ -1,19 +1,12 @@
+<%= content_tag_for(:li, todo, :class => "list-group-item" , :style => "background-color: #c0c0c0; color:white;" ) do %>
 
-<li class="list-group-item" style="background-color: #c0c0c0; color:white;" >
   <div class="row" >
-
-
-
-
-
     <div class="col-xs-10" >
       <div class="group ">
           <h6 >   <%= render_todo_status(todo)  %> <span class="underline"> <%= todo.subject %> </span> </h6>
 
         <%= todo.content.to_markdown %>
       </div>
-
-
 
     </div>
 
@@ -33,8 +26,5 @@
           </div>
 
         </div>
-      </div>
-  </li>
-
-  
-</li>
+  </div>
+<% end %>

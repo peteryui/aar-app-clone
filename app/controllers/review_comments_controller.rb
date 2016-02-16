@@ -10,7 +10,7 @@ class ReviewCommentsController < TeamsController
 
     if @comment.save
       flash[:notice] = "成功留言"
-      redirect_to event_review_path(@review.event_id, @review )
+      redirect_to event_review_path(@review.event_id, @review , :anchor => view_context.dom_id(@comment)  )
     else
       render "reviews/show"
     end

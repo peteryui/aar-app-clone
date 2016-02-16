@@ -37,7 +37,7 @@ class TodoCommentsController < TeamsController
       @review = @todo.review
       @comment.destroy
 
-      redirect_to event_review_path(@review.event_id, @review)
+      redirect_to :back
 
     end
 

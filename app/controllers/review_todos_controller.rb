@@ -45,21 +45,44 @@ class ReviewTodosController < TeamsController
     @todo = @review.todos.find(params[:id])
     @todo.open!
     flash[:warning] = "已重新打開此 todo"
-    redirect_to event_review_path(@review.event_id, @review, :anchor => view_context.dom_id(@todo)  )
+
+    case params[:from]
+    when "reviews"
+      redirect_to event_review_path(@review.event_id, @review, :anchor => view_context.dom_id(@todo)  )
+    else
+      redirect_to :back
+    end
   end
 
   def mark_closed
     @todo = @review.todos.find(params[:id] )
     @todo.close!
     flash[:notice] = "已把此 todo 設定「完成」"
-    redirect_to event_review_path(@review.event_id, @review, :anchor => view_context.dom_id(@todo)  )
+
+    case params[:from]
+    when "reviews"
+      redirect_to event_review_path(@review.event_id, @review, :anchor => view_context.dom_id(@todo)  )
+    else
+      redirect_to :back
+    end
+
+
   end
 
   def mark_pending
     @todo = @review.todos.find(params[:id]  )
     @todo.pend!
     flash[:notice] = "已把此 todo 設定「擱置」"
-    redirect_to event_review_path(@review.event_id, @review, :anchor => view_context.dom_id(@todo)  )
+
+
+    case params[:from]
+    when "reviews"
+      redirect_to event_review_path(@review.event_id, @review, :anchor => view_context.dom_id(@todo)  )
+    else
+      redirect_to :back
+    end
+
+
   end
 
   def create

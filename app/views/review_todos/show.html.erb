@@ -55,14 +55,19 @@
 
   </div>
 
-  <div class="col-sm-6">
-
-    <% if @comments.present? %>
-      <%= render :partial => "todo_comments/comment_list" %>
-    <% end %>
+  <div class="col-sm-5">
 
 
     <%= render :partial => "todo_comments/comment_form" %>
+
+
+    <% if @comments.present? %>
+      <%= render :partial => "todo_comments/comment_list" %>
+
+      <%= render :partial => "todo_comments/comment_form" %>
+
+    <% end %>
+
 
 
   </div>

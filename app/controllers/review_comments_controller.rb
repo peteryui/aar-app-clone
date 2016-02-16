@@ -25,7 +25,7 @@ class ReviewCommentsController < TeamsController
     @comment = @review.comments.find(params[:id])
 
     if @comment.update(comment_params)
-      redirect_to event_review_path(@review.event_id, @review)
+      redirect_to event_review_path(@review.event_id, @review , :anchor => view_context.dom_id(@comment)  )
     else
       render :edit
     end

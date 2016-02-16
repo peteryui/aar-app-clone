@@ -6,6 +6,7 @@ class Todo < ActiveRecord::Base
   belongs_to :review, :counter_cache => true
 
   validates :subject, presence: true
+  scope :recent , -> { order("id DESC")}
 
   include AASM
 

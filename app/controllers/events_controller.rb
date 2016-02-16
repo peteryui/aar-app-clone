@@ -30,10 +30,10 @@ class EventsController < TeamsController
 
     @reviews_grid = initialize_grid(@event.reviews.recent)
 
-    @comments = Comment.where(:commentable => @event.reviews).recent
-    @comments_grid = initialize_grid(@comments)
+    @comments = Comment.where(:commentable => @event.reviews)
+    @comments_grid = initialize_grid(@comments.recent)
 
-    @todos_grid = initialize_grid(@event.todos)
+    @todos_grid = initialize_grid(@event.todos.recent.open)
 
     drop_breadcrumb("Events", events_path)
     drop_breadcrumb(@event.name,event_path(@event))

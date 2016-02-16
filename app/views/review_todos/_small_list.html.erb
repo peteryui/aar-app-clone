@@ -1,11 +1,15 @@
 
 <div class="clearafix">
 
-
 <%= grid(todos_grid) do |g|
 
   g.column :name => "#" do |todo|
     todo.id
+  end
+
+
+  g.column :name => "狀態" do |todo|
+    render_todo_status(todo)
   end
 
 

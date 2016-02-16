@@ -6,7 +6,6 @@ class Comment < ActiveRecord::Base
   belongs_to :team
   validates :comment, presence: true
 
-  default_scope -> { order('created_at ASC') }
   scope :recent , -> { order("id DESC")}
   # NOTE: install the acts_as_votable plugin if you
   # want user to vote on the quality of comments.

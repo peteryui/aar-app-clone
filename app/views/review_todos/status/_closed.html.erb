@@ -5,7 +5,11 @@
 
     <div class="col-xs-10" style="text-decoration: line-through;" >
       <div class="group ">
-          <h6 >   <%= render_todo_status(todo)  %> <span class="underline"> <%= todo.subject %> </span> </h6>
+
+        <h6 >
+          <%= render_todo_status(todo)  %> <span class="underline"> <%= render_todo_subject(todo) %> </span>
+        </h6>
+
 
         <%= todo.content.to_markdown %>
       </div>

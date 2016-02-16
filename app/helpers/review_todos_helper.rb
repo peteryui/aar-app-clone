@@ -13,6 +13,10 @@ module ReviewTodosHelper
   end
 
 
+  def render_todo_subject(todo)
+    link_to(todo.subject, review_todo_path(todo.review_id, todo ))
+  end
+
   def render_todo_status(todo)
     case todo.status
     when "open"

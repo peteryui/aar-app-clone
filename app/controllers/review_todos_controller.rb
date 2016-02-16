@@ -35,6 +35,29 @@ class ReviewTodosController < TeamsController
     flash[:warning] = "成功刪除 TODO"
     redirect_to event_review_path(@review.event_id, @review )
   end
+
+
+  def mark_open
+    @todo = @review.todos.find(params[:id])
+    @todo.open!
+    flash[:warning] = "已重新打開此 todo"
+    redirect_to :back
+  end
+
+  def mark_closed
+    @todo = @review.todos.find(params[:id])
+    @todo.close!
+    flash[:notice] = "已把此 todo 設定「完成」"
+    redirect_to :back
+  end
+
+  def mark_pending
+    @todo = @review.todos.find(params[:id])
+    @todo.pend!
+    flash[:notice] = "已把此 todo 設定「擱置」"
+    redirect_to :back
+  end
+
   def create
 
     @todo = @review.todos.build(todo_params)

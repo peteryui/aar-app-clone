@@ -7,17 +7,17 @@
         <span class="sr-only">Toggle Dropdown</span>
       </button>
       <ul class="dropdown-menu pull-right">
-        <li><a href="#"> Open (TODO)</a></li>
-        <li><a href="#"> Pending (TODO)</a></li>
-        <li><a href="#"> Close (TODO)</a></li>
-        <li role="separator" class="divider"></li>
-        <li>  <%= ibutton("編輯", edit_review_todo_path(review,todo), :remote => true, :iclass => "fa fa-pencil") %>
+
+        <%= render :partial => "review_todos/status_options", :locals => { :todo => todo } %>
+
+        <li>
+            <%= ibutton("編輯", edit_review_todo_path(review,todo), :remote => true, :iclass => "fa fa-pencil") %>
         </li>
 
         <li>
           <%= ibutton("刪除", review_todo_path(review,todo), :method => :delete, :iclass => "glyphicon glyphicon-trash", :data => { :confirm => "Are you sure?"}) %>
-
         </li>
+
       </ul>
     </div>
 </div>

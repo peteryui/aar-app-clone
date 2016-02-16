@@ -1,0 +1,36 @@
+<%= content_tag_for(:li, comment, :class => "list-group-item" ) do %>
+  <div class="row">
+
+    <div class="action pull-right" style="margin-right:20px;">
+        <!-- Split button -->
+        <div class="btn-group  btn-group-xs">
+          <button type="button" class="btn btn-xs btn-default">選項</button>
+          <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu pull-right">
+            <li>  <%= ibutton("編輯", edit_todo_comment_path(@todo,comment), :remote => true, :iclass => "fa fa-pencil") %>
+            </li>
+
+            <li>
+              <%= ibutton("刪除", todo_comment_path(@todo,comment), :method => :delete, :iclass => "glyphicon glyphicon-trash", :data => { :confirm => "Are you sure?"}) %>
+
+            </li>
+          </ul>
+        </div>
+    </div>
+
+
+    <div class="col-xs-2 ">         <%= render_user_avatar(comment.user) %>    </div>
+    <div class="col-xs-10">
+      <div class="group ">
+        <%= render_todo_comment_content(comment) %>
+
+    </div>
+    <div class="mic-info pull-right">
+        By: <%= render_user_name(comment.user) %> on  <span class="underline"><%= comment.updated_at.to_s(:short) %> </span>
+    </div>
+</div>
+</div>
+<% end %>

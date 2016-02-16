@@ -1,5 +1,3 @@
-<hr>
-
 <div class="panel panel-default widget">
   <div class="panel-heading">
       <i class="fa fa-comments"></i>
@@ -8,7 +6,7 @@
   </div>
     <div class="panel-body">
         <ul class="list-group">
-          <%= render :partial => "review_comments/comment_box", :collection => @comments , :as => :log %>
+          <%= render :partial => "todo_comments/comment_box", :collection => @comments , :as => :comment %>
          </ul>
 
     </div>

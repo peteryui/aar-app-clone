@@ -1,4 +1,15 @@
+<hr>
 
+<div class="panel panel-default widget">
+  <div class="panel-heading">
+      <i class="fa fa-comments"></i>
+    <h3 class="panel-title"> Recent Comments</h3>
+    <span class="label label-info"> <%= @review.comments_count %> </span>
+  </div>
+    <div class="panel-body">
+        <ul class="list-group">
+          <%= render :partial => "review_comments/comment_box", :collection => @comments , :as => :log %>
+         </ul>
 
-
-<%= render :partial => "review_comments/list" %>
+    </div>
+</div>

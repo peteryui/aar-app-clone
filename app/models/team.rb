@@ -7,6 +7,7 @@ class Team < ActiveRecord::Base
   has_many :reviews
   has_many :invitations
   has_many :comments
+  has_many :todos
 
   validates :name, presence: true
   validates :domain, presence: true

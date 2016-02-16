@@ -34,7 +34,7 @@ Rails.application.routes.draw do
     end
 
     resources :todos do
-      resources :comments
+      resources :comments, :controller => "todo_comments"
     end
 
     resources :media_contents, only: [:create]

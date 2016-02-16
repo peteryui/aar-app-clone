@@ -2,10 +2,23 @@
   <div class="col-sm-9 col-sm-offset-1">
 
 
-    <h2 class="underline">     TODO:  <%= @todo.subject %>  </h2>
-<%= @todo.content.to_markdown %>
+      <%= render :partial => "review_todos/box_options", :locals => { :todo => @todo, :review => @review } %>
 
 
+
+    <h2 >    <%= render_todo_status(@todo) %> <span class="underline"> <%= @todo.subject %>  </span> </h2>
+
+    <br>
+    <br>
+    <%= @todo.content.to_markdown %>
+
+    <div class="group">
+
+      <div class="pull-right" >
+        by <%= @todo.user.name %> on <%= @todo.created_at.to_s(:short) %>
+      </div>
+
+    </div>
   </div>
 </div>
 
@@ -16,12 +29,11 @@
 
 
 
-
         <div class="well">
 
 
 
-              <h4> Review: <%= @review.subject %> </h4>
+              <h4> Review: <%= render_review_subject(@review) %> </h4>
 
             <hr>
             <h6 class="underline"> 為什麼沒有達到預期的效果？實際上發生什麼事？差別在哪裡？ </h6>

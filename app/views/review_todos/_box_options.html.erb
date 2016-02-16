@@ -1,0 +1,23 @@
+<div class="action pull-right" style="margin-right:20px;">
+    <!-- Split button -->
+    <div class="btn-group  btn-group-xs">
+      <button type="button" class="btn btn-xs btn-default">選項</button>
+      <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu pull-right">
+        <li><a href="#"> Open (TODO)</a></li>
+        <li><a href="#"> Pending (TODO)</a></li>
+        <li><a href="#"> Close (TODO)</a></li>
+        <li role="separator" class="divider"></li>
+        <li>  <%= ibutton("編輯", edit_review_todo_path(review,todo), :remote => true, :iclass => "fa fa-pencil") %>
+        </li>
+
+        <li>
+          <%= ibutton("刪除", review_todo_path(review,todo), :method => :delete, :iclass => "glyphicon glyphicon-trash", :data => { :confirm => "Are you sure?"}) %>
+
+        </li>
+      </ul>
+    </div>
+</div>

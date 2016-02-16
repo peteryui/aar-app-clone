@@ -364,6 +364,3 @@ DEPENDENCIES
   underscore-rails
   web-console (~> 2.0)
   wice_grid
-
-BUNDLED WITH
-   1.11.2

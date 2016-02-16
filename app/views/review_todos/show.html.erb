@@ -1,0 +1,52 @@
+<div class="row" style="padding-bottom: 100px;">
+  <div class="col-sm-9 col-sm-offset-1">
+
+
+    <h2 class="underline">     TODO:  <%= @todo.subject %>  </h2>
+<%= @todo.content.to_markdown %>
+
+
+  </div>
+</div>
+
+        <hr>
+<div class="row">
+  <div class="col-sm-5 col-sm-offset-1">
+
+
+
+
+
+        <div class="well">
+
+
+
+              <h4> Review: <%= @review.subject %> </h4>
+
+            <hr>
+            <h6 class="underline"> 為什麼沒有達到預期的效果？實際上發生什麼事？差別在哪裡？ </h6>
+
+            <%= @review.should_happen.to_markdown %>
+
+              <h6 class="underline"> 哪些方法有效？哪些無效？為什麼 </h6>
+            <%= @review.actual_happen.to_markdown %>
+
+            <h6 class="underline"> 下次應該怎麼做 </h6>
+
+            <%= @review.improvement_plan.to_markdown %>
+
+
+            <div class="group">
+
+              <div class="pull-right" >
+                by <%= @review.user.name %> on <%= @review.created_at.to_s(:short) %>
+              </div>
+
+            </div>
+
+        </div>
+
+
+
+  </div>
+</div>

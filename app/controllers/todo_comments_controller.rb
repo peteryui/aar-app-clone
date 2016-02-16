@@ -1,0 +1,2 @@
+class TodoCommentsController < ApplicationController
+end

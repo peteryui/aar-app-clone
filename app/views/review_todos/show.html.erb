@@ -4,9 +4,7 @@
 
       <%= render :partial => "review_todos/box_options", :locals => { :todo => @todo, :review => @review } %>
 
-
-
-    <h2 >    <%= render_todo_status(@todo) %> <span class="underline"> <%= @todo.subject %>  </span> </h2>
+      <h2 >    <%= render_todo_status(@todo) %> <span class="underline"> <%= @todo.subject %>  </span> </h2>
 
     <br>
     <br>
@@ -53,6 +51,18 @@
 
         </div>
 
+
+
+  </div>
+
+  <div class="col-sm-6">
+
+    <% if @comments.present? %>
+      <%= render :partial => "todo_comments/comment_list" %>
+    <% end %>
+
+
+    <%= render :partial => "todo_comments/comment_form" %>
 
 
   </div>

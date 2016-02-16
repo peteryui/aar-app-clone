@@ -33,6 +33,10 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :todos do
+      resources :comments
+    end
+
     resources :media_contents, only: [:create]
 
     resources :invitations do
